@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="directions-text"> press T for true and F for false to start</h1>
+        <h3 id="questions"></h3>
+        <p id="score"></p>
+    </div>
+    <script type="text/javascript">
+        var count = 0
+        var questions= [
+        {q: "are you smart? ", a: "t"}
+        ,{q: "can you code? ", a: "t"},
+        {q: "is pepsi better? ", a: "f"}
+        ,{q: "is cereal a soup? ", a: "t"}
+        ,{q: "do you need food? ", a: "t"}
+        ,{q: "do you need money? ", a: "t"}
+        ,{q: "is gas expensive? ", a: "t"}
+        ,{q: "is pizza the best food? ", a: "f"}
+        ,{q: "is class too long? ", a: "f"}
+        ,{q: "is messi better? ", a: "t"}
+    ];
+
+        document.getElementById("questions").innerHTML =questions[count].q;
+
+
+        document.onkeyup = function(event){
+            var input = event.key;
+            if(input== "t" || input =="f"){
+                if(questions[count].a == input){
+                    alert("your right")
+                }
+
+                else{
+                    alert("your wrong")
+                }
+                count++;
+            }
+                document.getElementById("questions").innerHTML =questions[count].q;
+            }
+
+    </script>
+</body>
+</html>
